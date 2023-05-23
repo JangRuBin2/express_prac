@@ -9,11 +9,15 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/JangRuBin2/express_prac.git"
-  }, "type": "module",
+  },
+  "type": "module",
   "author": "",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/JangRuBin2/express_prac/issues"
   },
-  "homepage": "https://github.com/JangRuBin2/express_prac#readme"
+  "homepage": "https://github.com/JangRuBin2/express_prac#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
 }
