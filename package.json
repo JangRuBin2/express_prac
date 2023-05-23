@@ -9,7 +9,7 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/JangRuBin2/express_prac.git"
-  },
+  }, "type": "module",
   "author": "",
   "license": "ISC",
   "bugs": {
