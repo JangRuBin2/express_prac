@@ -17,7 +17,20 @@
         btn.addEventListener("click", ()=> {
             const text = document.getElementById("text")
             console.log(text.value);
+            // const jsonText = JSON.stringify(text);
+            // console.dir(jsonText);
+            // fetch 메서드로 '/text 요청 보내기'
+            fetch('/test', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(text),
+            })
+            .then(response => { response.json()})
+            .then(data => {console.log(data)})
         })
+        
     </script>
 </body>
 </html>

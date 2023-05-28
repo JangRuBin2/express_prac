@@ -20,7 +20,7 @@ app.get("/", (req, res)=> {
     res.send("Hello Get World");
 });
 // test라는 요청 들어왔을 때 요청으로 들어온 데이터 응답
-app.get("/test", (req, res)=> {
+app.post("/test", (req, res)=> {
     // ! req.params는 요청 파라미터를 가져오는 것에 사용
     // res.send(req.params);
     const inputData = req.body;
