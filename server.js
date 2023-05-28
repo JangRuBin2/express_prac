@@ -1,4 +1,6 @@
 import express from "express";
+import  path  from "path";
+console.log(path)
 // console.log(express);
 
 const app = express();
