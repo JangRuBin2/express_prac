@@ -9,6 +9,10 @@ import { dirname } from 'path';
 const app = express();
 const port = 3000;
 // app.use(express.static(__dirname, "public"))
+const __filename = fileURLToPath(import.meta.url);
+console.log("file name 경로 입니다 : " + __filename);
+const __dirname = dirname(__filename);
+console.log("dirname 경로 입니다 : " + __dirname);
 // get 요청
 app.get("/", (req, res)=> {
     res.send("Hello Get World");
