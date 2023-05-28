@@ -1,4 +1,3 @@
-import exp from "constants";
 import express from "express";
 // import  path  from "path";
 // console.log(path)
@@ -10,18 +9,18 @@ const app = express();
 const port = 3000;
 // app.use(express.static(__dirname, "public"))
 const __filename = fileURLToPath(import.meta.url);
-// console.log("file name 경로 입니다 : " + __filename);
+console.log("file name 경로 입니다 : " + __filename);
 const __dirname = dirname(__filename);
-// console.log("dirname 경로 입니다 : " + __dirname);
+console.log("dirname 경로 입니다 : " + __dirname);
 // json()메서드로 요청의 body 파싱
 app.use(express.json());
 // 정적 파일 서빙????
-const publicPath = join(__dirname, "public");
-app.use(express.static(publicPath));
+// const publicPath = join(__dirname, "public");
+app.use(express.static(__dirname));
 // get 요청
 app.get("/", (req, res)=> {
     // res.send("Hello Get World");
-    
+    res.sendFile((publicPath, "index.html"));
 });
 // test라는 요청 들어왔을 때 요청으로 들어온 데이터 응답
 app.post("/test", (req, res)=> {
