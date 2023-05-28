@@ -23,7 +23,9 @@ app.get("/", (req, res)=> {
 app.get("/test", (req, res)=> {
     // ! req.params는 요청 파라미터를 가져오는 것에 사용
     // res.send(req.params);
-}
+    const inputData = req.body;
+    res.send(inputData);
+})
 // post 요청
 app.post("/", (req, res)=> {
     res.send("Hello Post World");
