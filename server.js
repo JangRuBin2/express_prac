@@ -4,7 +4,7 @@ import express from "express";
 // console.log(path)
 // console.log(express);
 import { fileURLToPath } from 'url';
-import { dirname } from 'path';
+import { dirname, join } from 'path';
 
 const app = express();
 const port = 3000;
@@ -15,9 +15,13 @@ const __dirname = dirname(__filename);
 // console.log("dirname 경로 입니다 : " + __dirname);
 // json()메서드로 요청의 body 파싱
 app.use(express.json());
+// 정적 파일 서빙????
+const publicPath = join(__dirname, "public");
+app.use(express.static(publicPath));
 // get 요청
 app.get("/", (req, res)=> {
-    res.send("Hello Get World");
+    // res.send("Hello Get World");
+    
 });
 // test라는 요청 들어왔을 때 요청으로 들어온 데이터 응답
 app.post("/test", (req, res)=> {
