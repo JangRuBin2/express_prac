@@ -34,11 +34,11 @@ app.post("/", (req, res)=> {
     res.send("Hello Post World");
 });
 // 모든 http 요청을 처리 가능한 all()과, 
-app.all("/test", (req, res)=> {
-    console.log("모든 요청의 처리가 가능합니다.");
-    // 다음 핸들러로 제어권을 넘길 때 사용하는 next()메서드
-    next();
-})
+// app.all("/test", (req, res)=> {
+//     console.log("모든 요청의 처리가 가능합니다.");
+//     // 다음 핸들러로 제어권을 넘길 때 사용하는 next()메서드
+//     next();
+// })
 app.listen(8080, ()=> {
 console.log("express server is started");
 })
