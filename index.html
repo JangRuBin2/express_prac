@@ -7,33 +7,34 @@
     <title>Document</title>
 </head>
 <body>
-    <!-- <form action="/test"> -->
     <label for="text">보낼 데이터</label>
     <input type="text" name="userData" id="text">
     <input type="button" value="전송" id="btn">
-    <!-- </form> -->
+
     <script>
         const btn = document.getElementById("btn");
-        btn.addEventListener("click", ()=> {
-            const text = document.getElementById("text").value
-            // console.log(text.value);
-            console.log(text)
-            // const jsonText = JSON.stringify(text);
-            // console.dir(jsonText);
-            // fetch 메서드로 '/text 요청 보내기'
+        btn.addEventListener("click", () => {
+            const text = document.getElementById("text").value;
+            console.log(text);
+
             fetch('/test', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                // 요청 데이터 객체 형태로 변환
-                body: JSON.stringify({userData : text}),
+                body: JSON.stringify({ userData: text }),
             })
-            .then(response => { response.json()})
-            .then(data => {console.log(data)})
-            .catch(error => { console.error(error)})
-        })
-        
+            .then(response => response.json())
+            .then(data => {
+                console.log(data);
+                let outputData = document.createElement("div");
+                outputData.innerHTML = data.userData;
+                document.body.appendChild(outputData);
+            })
+            .catch(error => {
+                console.error(error);
+            });
+        });
     </script>
 </body>
 </html>
