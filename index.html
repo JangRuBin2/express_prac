@@ -15,8 +15,9 @@
     <script>
         const btn = document.getElementById("btn");
         btn.addEventListener("click", ()=> {
-            const text = document.getElementById("text")
-            console.log(text.value);
+            const text = document.getElementById("text").value
+            // console.log(text.value);
+            console.log(text)
             // const jsonText = JSON.stringify(text);
             // console.dir(jsonText);
             // fetch 메서드로 '/text 요청 보내기'
@@ -25,7 +26,8 @@
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify(text),
+                // 요청 데이터 객체 형태로 변환
+                body: JSON.stringify({userData : text}),
             })
             .then(response => { response.json()})
             .then(data => {console.log(data)})
