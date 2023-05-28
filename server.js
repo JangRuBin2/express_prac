@@ -1,10 +1,14 @@
+import exp from "constants";
 import express from "express";
-import  path  from "path";
-console.log(path)
+// import  path  from "path";
+// console.log(path)
 // console.log(express);
+import { fileURLToPath } from 'url';
+import { dirname } from 'path';
 
 const app = express();
 const port = 3000;
+// app.use(express.static(__dirname, "public"))
 // get 요청
 app.get("/", (req, res)=> {
     res.send("Hello Get World");
