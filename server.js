@@ -3,8 +3,13 @@ import express from "express";
 
 const app = express();
 const port = 3000;
+// get 요청
 app.get("/", (req, res)=> {
-    res.send("Hello World");
+    res.send("Hello Get World");
+});
+// post 요청
+app.post("/", (req, res)=> {
+    res.send("Hello Post World");
 });
 app.listen(8080, ()=> {
 console.log("express server is started");
