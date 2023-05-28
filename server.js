@@ -10,13 +10,17 @@ const app = express();
 const port = 3000;
 // app.use(express.static(__dirname, "public"))
 const __filename = fileURLToPath(import.meta.url);
-console.log("file name 경로 입니다 : " + __filename);
+// console.log("file name 경로 입니다 : " + __filename);
 const __dirname = dirname(__filename);
-console.log("dirname 경로 입니다 : " + __dirname);
+// console.log("dirname 경로 입니다 : " + __dirname);
 // get 요청
 app.get("/", (req, res)=> {
     res.send("Hello Get World");
 });
+// test라는 요청 들어왔을 때 요청으로 들어온 데이터 응답
+app.get("/test", (req, res)=> {
+    res.send(req.params);
+}
 // post 요청
 app.post("/", (req, res)=> {
     res.send("Hello Post World");
